@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TFboys</title>
+	<style>
+		* {
+		    padding: 0;
+		    margin: 0;
+		}
+		a {
+		    text-decoration: none;
+		}
+		ul {
+		    list-style-type: none;
+		}
+		.clear {
+        	clear: both;
+        }
+        #upup {
+        	width: 50px;
+        	height: 50px;
+        	border: none;
+        	background-image:url('images/up.jpg'); 
+			background-color: white;
+			position: fixed;
+			right: 35px;
+			bottom: 35px;
+        }
+        #upup:focus {
+        	outline: none;
+        }
+		img {
+			vertical-align: bottom;
+		}
+		.container {
+		    width: 1200px;
+		    margin: 0 auto;
+		}
+		.logo img {
+			float: left;
+		}
+		.logo,
+		.header-mid {
+			height: 110px;
+			display: inline-block;
+		}
+		.header-mid {
+			margin-left: 60px;
+		}
+		.header-mid a {
+			font-size:18px;
+			line-height:18px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:#FF9933;
+			clear: both;
+		}
+		.header-mid li {
+		    width: 100px;
+		    text-align: center;
+			float: left;				
+			height:28px;
+			padding-top:42px; 
+			padding-bottom: 5px; 
+		}
+		.header-mid li:hover {
+			border-bottom: 2px solid #FF6600;
+		}	
+		.header-right {			
+			margin-top: 30px;
+			padding-right: 90px;
+			float: right;
+		}
+		.search {
+			border:1px solid rgb(118, 118, 118);
+			float: left;
+			padding: 13px 272px 12px 30px;
+			width:70px;
+			height:15px;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+			line-height:31px;
+		}
+		.search:focus {
+			outline: 2px solid #FF6633;
+		}		
+		.submit {
+			float: left;
+			width: 50px;
+			height: 42px;
+			border: none;
+			margin-right:31px;
+			background:#FF6600 url('images/fa-search.png') no-repeat center center;
+		}
+		.banner {
+			background-color: #E9E7DE;
+			
+		}
+		.banner .container {
+			background:url('images/banner-1.png') no-repeat right top;
+			height: 350px;
+		}
+		.form1 {
+			margin-left: 300px;
+			margin-top: 50px;
+			display: inline-block;
+		}
+		h3 {
+			margin-bottom: 10px;
+		}
+		#name1,#password1 {
+			width: 178px;
+			height: 35px;
+			line-height: 35px;
+			border: 0;
+		}
+		.user {
+			float: left;
+			width: 70px;
+			height: 35px;
+			line-height: 35px;
+		}
+		#button1 {
+			height: 45px;
+			background-color: rgb(225,0,0);
+			width: 250px;
+			color: white;
+		}
+		.littlea {
+			border: 1px solid black;
+		}
+		.littlea input:focus {
+			outline: 0;
+		}
+		.tips {
+			width: 250px;
+			height: 35px;
+			line-height: 35px;
+			font-size: 12px;
+			text-align: left;
+			color: rgb(169,169,169);
+		}
+
+		.banner form {
+			margin-top: 25px;
+			padding: 10px;
+			width: 250px;
+			height: 230px;
+			border: 2px solid rgba(216,16,0,0.3);
+			float: left;
+			margin-right: 10px;
+		}
+		.button {
+			height: 30px;
+			margin-top: 10px;
+			background-color: rgb(224,0,0);
+			border: 0;
+			width: 160px;
+		}
+		.team {
+			width: 400px;
+			height: 350px;
+			float: left;
+		}
+		.team-word {
+			line-height: 24px;
+		    font-size: 14px;
+		    text-indent: 2em;
+		    padding-bottom: 10px;
+		    border-bottom: 1px solid #ccc;
+		    float: left;
+		    width: 480px;
+		    height: 130px;
+		}
+		.baike {
+			line-height: 24px;
+		    font-size: 14px;
+		    text-indent: 2em;
+		    padding-bottom: 20px;
+		    border-bottom: 1px solid #ccc;
+		}
+		.title {
+			border-left: solid 12px #FF9933;
+    		font-size: 22px;
+    		display: block;
+    		font-family: 'Microsoft Yahei',SimHei,Verdana;
+    		font-weight: 500;
+			text-align: center;
+			width: 100px;
+			margin-bottom: 15px;
+			padding-left: 30px;	
+			margin-top: 20px;	
+		}
+		.intro {
+			text-indent: 2em;
+			padding-bottom: 20px;
+		}
+		.intro p {
+			padding-top: 20px;
+		}
+		.part {
+			width: 1200px;
+			height: 62px;
+		}
+		.part-mid {
+			width: 500px;
+			height: 62px;
+			float: left;
+			margin-left: 205px;
+		}
+		.part-mid  li {
+		    width: 105px;
+		    text-align: center;
+			float: left;				
+			height:17px;
+			padding-top:20px;  
+		}
+		.part-mid a {
+			font-size:18px;
+			line-height:18px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(134, 134, 134, 1);
+		}
+		.part-mid li:hover a {
+			color: #FF9933;
+		}
+		.left1 {
+			float: left;
+			width:140px;
+			height:19px;
+			font-size:20px;
+			font-family:Microsoft YaHei;
+			color:rgba(73,73,73,1);
+			margin-top: 22px;
+			margin-bottom: 21px;
+			line-height: 19px;
+			padding-left: 30px;
+			border-left: solid 12px #FF9933;
+		}
+		.right1 a {
+			float: right;
+			text-align: right;
+			padding-top: 20px;
+			padding-right: 31px;
+			width:48px;
+			height:13px;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			color:rgba(165,165,165,1);
+		}	
+		.part2 {
+			width: 1215px;
+			height: 570px;
+		}
+		.every1 {
+			width: 228px;
+			height: 270px;
+			margin-right: 15px;
+			margin-bottom: 15px;
+			float: left;
+		}
+		.every1:hover {
+			box-shadow:0px 2px 5px 0px rgba(118,118,118,0.5);
+		}
+		.every1 img {
+			width: 228px;
+			height: 155px;
+		}
+		.every1 p {
+			width: 185px;
+			height: 34px;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+			color:rgba(5,5,5,1);
+			line-height:20px;
+			padding: 24px 20px 18px 23px;
+		}
+		.span1 {
+			height:13px;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			color:#FF7C2D;
+			padding-left: 23px;
+		}
+		.span2 {
+			height:13px;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			color:#999999;
+		}
+		.part2.part3 {
+			height: 300px;
+		}
+		.part4 {
+			height: 77px;
+			width: 1200px;
+			float: left;
+		}
+		.left {
+			margin-top: 37px;
+			margin-bottom: 21px;
+			padding-left: 30px;
+			font-size:20px;
+			font-family:Microsoft YaHei;
+			color:rgba(73,73,73,1);
+			height: 19px;
+			line-height: 19px;
+			display: inline-block;
+			border-left: solid 12px #FF9933;
+		}
+		.right a {
+			float: right;
+			text-align: right;
+			padding-top: 31px;
+			padding-right: 31px;
+			width:48px;
+			height:13px;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			color:rgba(165,165,165,1);
+		}
+		.part5 {
+			width: 1215px;
+			height: 381px;
+
+		}
+		.every2 {
+			height: 366px;
+			width: 228px;
+			margin-right: 15px;
+			margin-bottom: 15px;
+			float: left;
+		}
+		.every2:hover {
+			box-shadow:0px 2px 5px 0px rgba(255,165,0,0.5);
+		}
+		.every2 img {
+			width: 228px;
+			height: 251px;
+		}
+		.every2 p {
+			width: 185px;
+			height: 34px;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+			color:rgba(5,5,5,1);
+			line-height:20px;
+			padding: 24px 20px 18px 23px;
+		}
+		.every1.Karry:hover {
+			box-shadow:0px 2px 5px 0px rgba(0,191,255,0.5);
+		}
+		.every1.Jackson:hover {
+			box-shadow:0px 2px 5px 0px rgba(220,20,60,0.5);
+		}
+		.every1.Roy:hover {
+			box-shadow:0px 2px 5px 0px rgba(0,255,127,0.5);
+		}
+		.bottom {
+			position: relative;
+			text-align: center;
+			background: rgb(211,211,211);
+			height: 150px;
+		}
+		.oath {
+			font: bold 25px '华文彩云';
+			color: rgb(255,165,0);
+		}
+		.one {
+			position: absolute;
+			left: 10%;
+			top: 0;
+		}
+		.two {
+			position: absolute;
+			right: 10%;
+			bottom: 0;
+		}
+		.copyright-1 {
+			padding-top: 45px;
+		}
+		.copyright-2 {
+			padding-top: 30px;
+		}
+		.copyright-1 {
+			font:bold 20px '宋体';
+		}
+		.copyright-2 {
+			font:bold 15px '方正舒体';
+		}
+		.part6 {
+			height: 420px;
+			position: relative;
+			text-align: center;
+		}
+		.part6 .container {
+			border-top: 2px solid rgba(255,165,0,0.5);
+		}
+		.part6 p {
+			text-indent: 2em;
+			text-align: left;
+			padding: 20px;
+			color:  rgb(192,192,192);
+		}
+		.part6 h2 {
+			color: rgb(255, 140, 0);
+		}
+		#img1 {
+			height: 250px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="button" id="upup" onclick="returnTop()" />
+	</div>
+	<div class="all">
+		<div class="head container">
+			<div class="logo clear">
+				<img src="images/logo.png" alt="">	
+			</div>
+			<div class="header-mid">
+				<ul >
+					<li><a class="first" href="">首页</a></li>
+					<li><a href="#infor">团队简介</a></li>
+					<li><a href="#success">个人成就</a></li>
+				</ul>
+			</div>
+			<div class="header-right">
+				<form class="form"> 
+	                <input type="text" placeholder="输入关键词" class="search"  />
+	                <input type="button" class="submit" />
+	            </form>
+	        </div>
+		</div>
+		<div class="banner clear">
+			<div class="container">
+				<form action="">
+					<h3 style="text-align: center;">四叶草集合</h3>
+					<div class="littlea">
+						<div class="user">用户名</div>
+						<input type="text" name="name"  id="name1" onfocus= "setName()" onblur="wrong1()">
+					</div>
+					<p class="tips"></p>
+					<div class="littlea">
+						<div class="user">登录密码</div>
+						<input type="password" name="password" value="" id="password1" onfocus="setPassword()" onblur="wrong2()">
+					</div>
+					<p class="tips"></p>
+					<input id="button1" type="submit" name="load" value="注册并登录" onclick="submit1()">
+				</form>
+				
+				<div class="team">
+					<h1>TFBOYS</h1>
+					<p class="team-word">TFBOYS是由北京时代峰峻文化艺术发展有限公司于2013年8月6日推出的中国男子演唱组合，由王俊凯、王源、易烊千玺三位成员组成。2013年8月，TFBOYS发布组合形象宣传片《十年》，正式出道；10月，发行首张EP《Heart梦·出发》。2014年3月，发行单曲《魔法城堡》；4月，获得第二届音悦V榜年度盛典的音悦直播人气歌手、内地最具人气歌手两个奖项；9月，受邀担任央视公益节目《开学第一课》的表... <a href="#infor" style="color: #787878"> >>></a></p>
+					<h2>秒懂百科</h2>
+					<p class="baike">TFBOYS是由北京时代峰峻文化艺术发展有限公司于2013年8月6日推出的中国男子演唱组合，由王俊凯、王源、易烊千玺三位成员组成。</p>
+				</div>
+			</div>	
+		</div>
+		<div class="basic container">
+			<div class="basic-top">
+				<p class="title" id="infor">基本信息</p>
+			</div>
+			<div class="intro">
+				<p>TFBOYS是由北京时代峰峻文化艺术发展有限公司于2013年8月6日推出的中国男子演唱组合，由王俊凯、王源、易烊千玺三位成员组成。</p>
+				<p>2013年8月，TFBOYS发布组合形象宣传片《十年》，正式出道；10月，发行首张EP《Heart梦·出发》 。2014年3月，发行单曲《魔法城堡》；4月，获得第二届音悦V榜年度盛典的音悦直播人气歌手、内地最具人气歌手两个奖项；9月，受邀担任央视公益节目《开学第一课》的表演嘉宾；10月，推出迷你专辑《青春修炼手册》。2015年3月，发行单曲《宠爱》；12月，在全亚洲地区发行迷你专辑《大梦想家》。</p>
+				<p>2016年2月，首次登上中央电视台春节联欢晚会的舞台，表演儿童节目《幸福成长》；7月，领衔主演的校园悬疑网络剧《超少年密码》上线首播。2017年7月，主演的青春励志剧《我们的少年时代》在湖南卫视“金鹰独播剧场”播出；12月，发行首张正规专辑《我们的时光》。2018年，出演奇幻动作片《爵迹2：冷血狂宴》。</p>
+			</div>
+		</div>
+		<div class="early container">
+			<div class="early-top">
+				<p class="title">早年经历</p>
+			</div>
+			<div class="intro">
+				<p>2009年，北京时代峰峻文化艺术发展有限公司发现国内“练习生”市场的空白，成立了TF家族的项目。2011年初，TF家族正式开始招募练习生，王俊凯通过首批甄选进入该公司成为练习生，随后在练习期间参与发行了EP《我不要改变》，翻唱了《囚鸟》、《我要快乐》等歌曲。2012年初，王源进入该公司，与王俊凯合作演唱了歌曲《一个像夏天一个像秋天》、合作翻唱《当爱已成往事》、《洋葱》等歌曲，受到了关注；同年，时代峰峻决定打造一个组合。但由于王俊凯、王源的专长不是舞蹈，所以公司选择了易烊千玺加入，组成一个三人互补的组合。</p>
+			</div>
+			<div style="text-align: center;" id="interval">
+				<img src="images/11.png" >
+			</div>
+		</div>
+		<div class="middle container">
+			<div class="part">
+				<div class="left1" id="love">代言集合</div>
+				<div class="part-mid">
+					<ul>
+						<li><a href="#love" style="color:#FF9933;">组合</a></li>
+						<li><a href="#karry">王俊凯</a></li>
+						<li><a href="#jackson">易烊千玺</a></li>
+						<li><a href="#roy">王源</a></li>
+					</ul>
+				</div>
+				<span class="right1"><a href="">查看全部</a></span>
+			</div>
+			<div class="part2 clear">
+				<div class="every1">
+					<img src="images/1.png" alt="">
+					<p>自然堂 你本来就很美！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>
+				<div class="every1">
+					<img src="images/2.png" alt="">
+					<p>舒肤佳  “健康成长，守护有你”</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>
+				<div class="every1">
+					<img src="images/3.png" alt="">
+					<p>芬达  一大波惊喜就要来了！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>
+				<div class="every1">
+					<img src="images/4.png" alt="">
+					<p>蒙牛 专属年轻人的ZUO牛奶</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>
+				<div class="every1">
+					<img src="images/5.png" alt="">
+					<p>KFC  TFBOYS造势来袭，引爆盛夏！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>
+				<div class="every1">
+					<img src="images/6.png" alt="">
+					<p>口红集合  是心动呀~</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>
+				<div class="every1">
+					<img src="images/7.png" alt="">
+					<p>步步高家教机  代言人及"首席体验师"</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>
+				<div class="every1">
+					<img src="images/8.png" alt="">
+					<p>康师傅  一路挺你，坚持梦想</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>
+				<div class="every1">
+					<img src="images/9.png" alt="">
+					<p>三只松鼠  青春向上的正能量的三个小吃货</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>
+				<div class="every1">
+					<img src="images/10.png" alt="">
+					<p>高德地图  每一步都有三小只陪你一起走！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20230806人已收藏</span>
+				</div>	
+			</div>
+			<div class="part">
+				<div class="left1" style="border-left: solid 12px rgb(0,191,255); " id="karry">个人集合</div>
+				<div class="part-mid">
+					<ul>
+						<li><a href="#love">组合</a></li>
+						<li><a href="#karry" style="color:#FF9933;">王俊凯</a></li>
+						<li><a href="#jackson">易烊千玺</a></li>
+						<li><a href="#roy">王源</a></li>
+					</ul>
+				</div>
+				<span class="right1"><a href="">查看全部</a></span>
+			</div>
+			<div class="part2 part3 clear">
+				<div class="every1 Karry">
+					<img src="images/k-1.png" alt="">
+					<p>兰蔻  “阿蔻，您又一次赢了”</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 1999921人已收藏</span>
+				</div>
+				<div class="every1 Karry">
+					<img src="images/k-2.png" alt="">
+					<p>暴龙眼镜 始终保持着独特自我风范！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 1999921人已收藏</span>
+				</div>
+				<div class="every1 Karry">
+					<img src="images/k-3.png" alt="">
+					<p>掌阅  与掌阅共同展示“阅读的力量”</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 1999921人已收藏</span>
+				</div>
+				<div class="every1 Karry">
+					<img src="images/k-4.png" alt="">
+					<p>Swatch  未来理想与梦想!</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 1999921人已收藏</span>
+				</div>
+				<div class="every1 Karry">
+					<img src="images/k-5.png" alt="">
+					<p>雷克萨斯  一眼来电，驰于潮流之前！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 1999921人已收藏</span>
+				</div>
+			</div>
+			<div class="part">
+				<div class="left1" style="border-left: solid 12px rgb(220,20,60); " id="jackson">个人集合</div>
+				<div class="part-mid">
+					<ul>
+						<li><a href="#love">组合</a></li>
+						<li><a href="#karry">王俊凯</a></li>
+						<li><a href="#jackson" style="color:#FF9933;">易烊千玺</a></li>
+						<li><a href="#roy">王源</a></li>
+					</ul>
+				</div>
+				<span class="right1"><a href="">查看全部</a></span>
+			</div>
+			<div class="part2 part3 clear">
+				<div class="every1 Jackson">
+					<img src="images/j-1.png" alt="">
+					<p>纪梵希  国际知名顶奢品牌！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001128人已收藏</span>
+				</div>
+				<div class="every1 Jackson">
+					<img src="images/j-2.png" alt="">
+					<p>宝马  蓝天白云，定会如期而至！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001128人已收藏</span>
+				</div>
+				<div class="every1 Jackson">
+					<img src="images/j-3.png" alt="">
+					<p>阿玛尼  共同开创蒂芙尼全新T时代！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001128人已收藏</span>
+				</div>
+				<div class="every1 Jackson">
+					<img src="images/j-4.png" alt="">
+					<p>阿迪达斯   Neo 系列及三叶草系列双线代言人！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001128人已收藏</span>
+				</div>
+				<div class="every1 Jackson">
+					<img src="images/j-5.png" alt="">
+					<p>可爱多  一位盐系少年，为夏天锦上添花！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001128人已收藏</span>
+				</div>
+			</div>
+			<div class="part">
+				<div class="left1" style="border-left: solid 12px rgb(0,255,127); " id="roy">个人集合</div>
+				<div class="part-mid">
+					<ul>
+						<li><a href="#love">组合</a></li>
+						<li><a href="#karry">王俊凯</a></li>
+						<li><a href="#jackson">易烊千玺</a></li>
+						<li><a href="#roy" style="color:#FF9933;">王源</a></li>
+					</ul>
+				</div>
+				<span class="right1"><a href="">查看全部</a></span>
+			</div>
+			<div class="part2 part3 clear">
+				<div class="every1 Roy">
+					<img src="images/r-1.png" alt="">
+					<p>欧莱雅口红  带货能力是杠杠的！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001108人已收藏</span>
+				</div>
+				<div class="every1 Roy">
+					<img src="images/r-2.png" alt="">
+					<p>惠普  白云蓝天下,你是最美的风景！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001108人已收藏</span>
+				</div>
+				<div class="every1 Roy">
+					<img src="images/r-3.png" alt="">
+					<p>奥利奥  属于吃货的青春！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001108人已收藏</span>
+				</div>
+				<div class="every1 Roy">
+					<img src="images/r-4.png" alt="">
+					<p>小米  为热爱全情投入！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001108人已收藏</span>
+				</div>
+				<div class="every1 Roy">
+					<img src="images/r-5.png" alt="">
+					<p>QQ阅读  点亮王源的小星球！</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 20001108人已收藏</span>
+				</div>
+			</div>
+			<div class="part4 clear">
+				<span class="left" id="success">杂志写真</span>
+				<span class="right"><a href="#">查看全部</a></span>
+			</div>
+			<div class="part5 clear">
+				<div class="every2">
+					<img src="images/mag-1.png" alt="">
+					<p>时尚芭莎</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 2016年7月上</span>
+				</div>
+				<div class="every2">
+					<img src="images/mag-2.png" alt="">
+					<p>时尚·COSMOPOLITAN</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 2016年8月</span>
+				</div>
+				<div class="every2">
+					<img src="images/mag-3.png" alt="">
+					<p>YOHO潮流志</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 2016年9月上</span>
+				</div>
+				<div class="every2">
+					<img src="images/mag-4.png" alt="">
+					<p>时尚先生</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 2017年8月</span>
+				</div>
+				<div class="every2">
+					<img src="images/mag-5.png" alt="">
+					<p>时尚芭莎</p>
+					<span class="span1">喜爱</span>
+					<span class="span2">· 2018年10月下</span>
+				</div>
+			</div>
+			<div class="part6">
+				<div class="container">
+					<div class="oath one">三生有幸</div>
+					<div class="oath two">余生一起走~</div>
+					<h2>我，有话说</h2>
+					<p>一直以来，三小只承载着我的信仰，是我的榜样，从儿时的疯狂，到现在的平静，不是不爱，而是这份爱已经藏在了我的心底。</p>
+					<p>很幸运在今年又有机会可以重新修改这个网页，今年已经是十年之约的第八年，十年之约即将到来，我不知道十年的你们会有什么变化，但我希望你们幸福！七年过去了，我们一起成长，我见证了你们的变化，也许最浪漫的事情就在于我们在一起成长，最浪漫的事也就是陪伴了吧。</p>
+					<p>希望未来的某一天，我能有机会站在你们面前，说一句你好，别来无恙！朝梦想努力吧，累了就停下来回头看看，四叶草永远都在你们的身后，是你们最大的依靠！</p>
+					<p>是我三生有幸能遇见你们，让我越来越优秀！</p>
+					<p>不要忘记我们的约定！十年之约，不负如来不负卿！</p>
+				</div>
+			</div>
+			
+		</div>
+		<div class="bottom">
+			<p class="copyright-1">© 2020-2021第一学期 河北师范大学 马淼琳 五班 2019012477</p>
+			<p class="copyright-2">版权及解释权归马淼琳所有  冀ICP备20230806号-10</p>
+			<div class="oath one">十年之约</div>
+			<div class="oath two">不忘初心</div>
+		</div>		
+	</div>
+	<script>
+		//登录注册
+		var tips1 = document.getElementsByClassName("tips")[0];
+		var tips2 = document.getElementsByClassName("tips")[1];
+		
+		function setName() {
+			tips1.innerHTML="支持中文数字";
+		}
+		function wrong1() {
+			var namea = document.getElementById("name1");
+		    
+			if(namea.value!="") {
+				tips1.innerHTML="";
+			}
+			else{
+				tips1.innerHTML="用户名不能为空";
+			}
+		}
+		function setPassword() {
+			tips2.innerHTML="建议至少使用两种字符组合";
+		}
+		function wrong2() {
+			var passworda = document.getElementById("password1");
+		    
+			if(passworda.value!="") {
+				tips2.innerHTML="";
+			}
+			else{
+				tips2.innerHTML="密码不能为空";
+			}
+		}
+		var name = document.getElementById("name1");
+		var password = document.getElementById("password1");
+		function submit1() {
+			if((name.value != "") && (password.value != "")) {
+				alert('注册并登录成功');
+			}
+			else  {
+				alert('用户名或密码为空无法登录！');
+			}
+		}
+
+		//图片周期切换
+		var interval = document.getElementById('interval');
+		var num = 1;
+		var move = setInterval(function() {
+				if(num <= 10 && num > 0) {
+					interval.innerHTML = '<img src="images/' + num +'.png" id="img1">';
+					num++;
+				}
+				else if(num==11){
+					interval.innerHTML = '<img src="images/11.png" id="img1">';
+					num = 1;
+				}
+			}, 1000);
+		
+		//回到顶部
+		function returnTop() {
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
+		}
+			
+		
+		
+	</script>
+		
+	
+</body>
+</html>
